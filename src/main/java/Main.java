@@ -20,14 +20,6 @@ public class Main {
 
         stream.close();
 */
-
-
-       String email = "Chicky@bombony.com";
-        char check[] = email.toCharArray();
-        char dot = '.';
-        /*System.out.println(Arrays.asList(check).contains('@'));*/
-        System.out.println(Arrays.asList(check).contains(dot));
-
     }
 
 
