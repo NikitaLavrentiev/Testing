@@ -38,10 +38,7 @@ public class User {
     }
 
     public boolean checkEmail(String email) {
-        return email != null
-                && !email.isBlank()
-                && !email.isEmpty()
-                && !email.equals(login)
+        return !email.equals(login)
                 && email.contains("@")
                 && email.contains(".");
     }
