@@ -20,6 +20,8 @@ public class Main {
 
         stream.close();
 */
+        User user = new User();
+        user.setEmail("sfsdfsf.fds");
     }
 
 

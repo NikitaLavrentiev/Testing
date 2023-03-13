@@ -17,7 +17,7 @@ public class User {
     }
 
     public void setLogin(String login) {
-        if (!login.equals(null) && !login.isBlank() && !login.isEmpty() && !login.equals(email)) {
+        if (login!=null && !login.isBlank() && !login.isEmpty() && !login.equals(email)) {
             this.login = login;
         } else {
             throw new IllegalArgumentException("Некорректно указан логин");
@@ -38,29 +38,13 @@ public class User {
     }
 
     public boolean checkEmail(String email) {
-        if (!email.equals(null) && !email.isBlank() && !email.isEmpty() && !email.equals(login)) {
-            char check[] = email.toCharArray();
-            for (int i = 0; i <= check.length-1 ; i++) {
-                if (check[i] == '@') {
-                    return true;
-                }
-                if (check[i] == '.') {
-                    return true;
-                }
-            }
-
-   /*  не работающий вариант проверки на наличие символов в почте
-          char check[] = email.toCharArray();
-            if (Arrays.asList(check).contains('@'))
-            return true;
-            if (Arrays.asList(check).contains('.')){
-                   return true;
-        }
-    */
-        }
-            return false;
-        }
-
+        return email != null
+                && !email.isBlank()
+                && !email.isEmpty()
+                && !email.equals(login)
+                && email.contains("@")
+                && email.contains(".");
     }
+}
 
 
